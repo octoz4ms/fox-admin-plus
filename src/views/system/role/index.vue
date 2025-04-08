@@ -175,7 +175,7 @@
           message: '请求中..',
           plain: true
         });
-        removeRoles(rows.map((d) => d.roleId))
+        removeRoles(rows.map((d) => d.id))
           .then((msg) => {
             loading.close();
             EleMessage.success(msg);

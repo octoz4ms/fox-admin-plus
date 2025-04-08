@@ -35,7 +35,7 @@
             ref="treeRef"
             :data="data"
             highlight-current
-            node-key="organizationId"
+            node-key="id"
             :props="{ label: 'organizationName' }"
             :expand-on-click-node="false"
             :default-expand-all="true"
@@ -46,8 +46,8 @@
         </ele-loading>
         <template #body>
           <user-list
-            v-if="current && current.organizationId"
-            :organization-id="current.organizationId"
+            v-if="current && current.id"
+            :organization-id="current.id"
           />
         </template>
       </ele-split-panel>
@@ -94,7 +94,7 @@
         loading.value = false;
         data.value = toTree({
           data: list,
-          idField: 'organizationId',
+          idField: 'id',
           parentIdField: 'parentId'
         });
         nextTick(() => {
@@ -113,9 +113,9 @@
     if (current.value != null && mobile.value) {
       splitRef.value?.toggleCollapse?.(true);
     }
-    if (row && row.organizationId) {
+    if (row && row.id) {
       current.value = row;
-      treeRef.value?.setCurrentKey?.(row.organizationId);
+      treeRef.value?.setCurrentKey?.(row.id);
     } else {
       current.value = null;
     }

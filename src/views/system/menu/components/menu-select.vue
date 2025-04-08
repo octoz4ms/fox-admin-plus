@@ -6,7 +6,7 @@
     :data="menuData"
     check-strictly
     default-expand-all
-    node-key="menuId"
+    node-key="id"
     :props="{ label: 'title' }"
     :placeholder="placeholder"
     :model-value="modelValue || void 0"
@@ -70,7 +70,7 @@
       .then((list) => {
         menuData.value = toTree({
           data: list,
-          idField: 'menuId',
+          idField: 'id',
           parentIdField: 'parentId'
         });
       })

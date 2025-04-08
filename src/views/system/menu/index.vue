@@ -5,7 +5,7 @@
       <ele-pro-table
         sticky
         ref="tableRef"
-        row-key="menuId"
+        row-key="id"
         :columns="columns"
         :datasource="datasource"
         :show-overflow-tooltip="true"
@@ -94,7 +94,7 @@
           <el-link
             type="primary"
             :underline="false"
-            @click="openEdit(null, row.menuId)"
+            @click="openEdit(null, row.id)"
           >
             添加
           </el-link>
@@ -215,7 +215,7 @@
     const data = await listMenus({ ...where });
     return toTree({
       data,
-      idField: 'menuId',
+      idField: 'id',
       parentIdField: 'parentId'
     });
   };
@@ -252,7 +252,7 @@
           message: '请求中..',
           plain: true
         });
-        removeMenu(row.menuId)
+        removeMenu(row.id)
           .then((msg) => {
             loading.close();
             EleMessage.success(msg);

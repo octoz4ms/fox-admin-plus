@@ -5,7 +5,7 @@
       <ele-pro-table
         sticky
         ref="tableRef"
-        row-key="organizationId"
+        row-key="id"
         :columns="columns"
         :datasource="datasource"
         :show-overflow-tooltip="true"
@@ -43,7 +43,7 @@
           <el-link
             type="primary"
             :underline="false"
-            @click="openEdit(null, row.organizationId)"
+            @click="openEdit(null, row.id)"
           >
             添加
           </el-link>
@@ -151,7 +151,7 @@
     const data = await listOrganizations({ ...where, ...orders });
     organizationData.value = toTree({
       data,
-      idField: 'organizationId',
+      idField: 'id',
       parentIdField: 'parentId'
     });
     return organizationData.value;
@@ -185,7 +185,7 @@
           message: '请求中..',
           plain: true
         });
-        removeOrganization(row.organizationId)
+        removeOrganization(row.id)
           .then((msg) => {
             loading.close();
             EleMessage.success(msg);

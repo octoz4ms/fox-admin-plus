@@ -228,7 +228,7 @@
 
   /** 表单数据 */
   const [form, resetFields, assignFields] = useFormData({
-    menuId: void 0,
+    id: void 0,
     parentId: void 0,
     title: '',
     menuType: 0,

@@ -122,7 +122,7 @@
 
   /** 表单数据 */
   const [form, resetFields, assignFields] = useFormData({
-    organizationId: void 0,
+    id: void 0,
     parentId: void 0,
     organizationName: '',
     organizationFullName: '',
@@ -208,6 +208,8 @@
     } else {
       resetFields();
       form.parentId = props.organizationId;
+      console.log('organizationData', props.organizationData);
+
       isUpdate.value = false;
     }
     nextTick(() => {
