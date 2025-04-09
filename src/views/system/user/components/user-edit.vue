@@ -135,7 +135,7 @@
 
   /** 表单数据 */
   const [form, resetFields, assignFields] = useFormData({
-    userId: void 0,
+    id: void 0,
     username: '',
     nickname: '',
     sex: void 0,

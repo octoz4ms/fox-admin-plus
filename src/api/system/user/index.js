@@ -1,10 +1,11 @@
 import request from '@/utils/request';
+const USER_API = 'http://localhost:8081/api';
 
 /**
  * 分页查询用户
  */
 export async function pageUsers(params) {
-  const res = await request.get('/system/user/page', { params });
+  const res = await request.get(USER_API + '/system/user/page', { params });
   if (res.data.code === 0) {
     return res.data.data;
   }
@@ -39,7 +40,7 @@ export async function getUser(id) {
  * 添加用户
  */
 export async function addUser(data) {
-  const res = await request.post('/system/user', data);
+  const res = await request.post(USER_API + '/system/user', data);
   if (res.data.code === 0) {
     return res.data.message;
   }
@@ -50,7 +51,7 @@ export async function addUser(data) {
  * 修改用户
  */
 export async function updateUser(data) {
-  const res = await request.put('/system/user', data);
+  const res = await request.put(USER_API + '/system/user', data);
   if (res.data.code === 0) {
     return res.data.message;
   }
@@ -61,7 +62,7 @@ export async function updateUser(data) {
  * 删除用户
  */
 export async function removeUser(id) {
-  const res = await request.delete('/system/user/' + id);
+  const res = await request.delete(USER_API + '/system/user/' + id);
   if (res.data.code === 0) {
     return res.data.message;
   }
@@ -72,7 +73,7 @@ export async function removeUser(id) {
  * 批量删除用户
  */
 export async function removeUsers(data) {
-  const res = await request.delete('/system/user/batch', {
+  const res = await request.delete(USER_API + '/system/user/batch', {
     data
   });
   if (res.data.code === 0) {

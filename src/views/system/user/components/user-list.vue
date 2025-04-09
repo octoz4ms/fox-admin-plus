@@ -255,7 +255,7 @@
           message: '请求中..',
           plain: true
         });
-        removeUsers(rows.map((d) => d.userId))
+        removeUsers(rows.map((d) => d.id))
           .then((msg) => {
             loading.close();
             EleMessage.success(msg);
