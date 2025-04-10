@@ -86,7 +86,7 @@
 
   /** 表单数据 */
   const [form, resetFields, assignFields] = useFormData({
-    dictId: void 0,
+    id: void 0,
     dictName: '',
     dictCode: '',
     sortNumber: void 0,

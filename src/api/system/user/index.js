@@ -99,9 +99,9 @@ export async function updateUserStatus(userId, status) {
 /**
  * 重置用户密码
  */
-export async function updateUserPassword(userId, password = '123456') {
-  const res = await request.put('/system/user/password', {
-    userId,
+export async function updateUserPassword(id, password = '123456') {
+  const res = await request.put(USER_API + '/system/user/password', {
+    id,
     password
   });
   if (res.data.code === 0) {
@@ -127,7 +127,7 @@ export async function importUsers(file) {
  * 检查用户是否存在
  */
 export async function checkExistence(field, value, id) {
-  const res = await request.get('/system/user/existence', {
+  const res = await request.get(USER_API + '/system/user/existence', {
     params: { field, value, id }
   });
   if (res.data.code === 0) {

@@ -6,7 +6,7 @@
   />
   <ele-pro-table
     ref="tableRef"
-    row-key="dictDataId"
+    row-key="id"
     :columns="columns"
     :datasource="datasource"
     :show-overflow-tooltip="true"
@@ -170,7 +170,7 @@
           message: '请求中..',
           plain: true
         });
-        removeDictionaryDataBatch(rows.map((d) => d.dictDataId))
+        removeDictionaryDataBatch(rows.map((d) => d.id))
           .then((msg) => {
             loading.close();
             EleMessage.success(msg);

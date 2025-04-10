@@ -337,7 +337,7 @@
             message: '请求中..',
             plain: true
           });
-          updateUserPassword(row.userId, value)
+          updateUserPassword(row.id, value)
             .then((msg) => {
               loading.close();
               EleMessage.success(msg);
