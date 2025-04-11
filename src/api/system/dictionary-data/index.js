@@ -20,7 +20,10 @@ export async function pageDictionaryData(params) {
  * 查询字典数据列表
  */
 export async function listDictionaryData(params) {
-  const res = await request.get('/system/dictionary-data', { params });
+  const res = await request.get(
+    DICTIONARY_DATA_API + '/system/dictionary-data',
+    { params }
+  );
   if (res.data.code === 0 && res.data.data) {
     return res.data.data;
   }

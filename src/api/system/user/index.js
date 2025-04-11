@@ -85,9 +85,9 @@ export async function removeUsers(data) {
 /**
  * 修改用户状态
  */
-export async function updateUserStatus(userId, status) {
-  const res = await request.put('/system/user/status', {
-    userId,
+export async function updateUserStatus(id, status) {
+  const res = await request.put(USER_API + '/system/user/status', {
+    id,
     status
   });
   if (res.data.code === 0) {

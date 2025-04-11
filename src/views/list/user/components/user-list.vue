@@ -248,7 +248,7 @@
   /** 修改用户状态 */
   const editStatus = (checked, row) => {
     const status = checked ? 0 : 1;
-    updateUserStatus(row.userId, status)
+    updateUserStatus(row.id, status)
       .then((msg) => {
         row.status = status;
         EleMessage.success(msg);
